@@ -9,9 +9,6 @@ $.ajax({
   type:"get",
   dataType:"json",
   success:function(res){
-    if(res.success){
-     alert("当前用户已登录")
-    }
     if(res.error===400){
       location.href="login.html"
     }

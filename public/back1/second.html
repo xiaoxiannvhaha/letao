@@ -7,6 +7,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
@@ -114,9 +115,13 @@
                   <!--挖一个坑-->
                 </ul>
               </div>
+
+              <!--隐藏域-->
+              <input type="hidden" name="categoryId">
+            
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" placeholder="请输入二级分类">
+              <input class="form-control" name="brandName" type="text" placeholder="请输入二级名称">
             </div>
             <div class="form-group">
               <label class="btn btn-default" for="fileupLoad">上传图片</label>
@@ -124,6 +129,7 @@
             </div>
             <div class="form-group" >
               <img id="imgBox" style="width: 100px" src="./images/none.png" >
+              <input type="hidden" name="brandLogo">
             </div>
         </div>
         <div class="modal-footer">
@@ -151,7 +157,7 @@
 
 <script type="text/html" id="dropdownTpl">
 {{each rows v i}}
-  <li><a href="#">{{v.categoryName}}</a></li>
+  <li><a data-id="{{v.id}}" href="#">{{v.categoryName}}</a></li>
 {{/each}}
 </script>
 <script src="./lib/jquery/jquery.min.js"></script>
@@ -162,6 +168,7 @@
 <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
 <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./js/commen.js"></script>
 <script src="./js/isLogin.js"></script>
 <script src="./js/second.js"></script>
